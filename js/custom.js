@@ -1,7 +1,17 @@
-
-
-
 (function ($) {
+$('#day2').hide();
+
+$(".day1toggler").click( function(){
+    $('#day1').show();
+    $('#day2').hide();
+});
+
+$(".day2toggler").click( function(){
+    $('#day2').show();
+    $('#day1').hide();
+});
+
+
     // 'use strict';
 
     // Main Navigation
