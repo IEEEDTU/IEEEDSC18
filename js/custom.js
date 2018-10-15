@@ -3,10 +3,6 @@
 
 (function ($) {
     // 'use strict';
-    $(window).scroll(function () {
-        var swiper = $(".hero-content");
-        var scrolled=$(document).scrollTop();
-    });
 
     // Main Navigation
     $('.hamburger-menu').on('click', function () {
