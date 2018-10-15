@@ -1,9 +1,15 @@
 
-(function($) {
+
+
+(function ($) {
     // 'use strict';
+    $(window).scroll(function () {
+        var swiper = $(".hero-content");
+        var scrolled=$(document).scrollTop();
+    });
 
     // Main Navigation
-    $( '.hamburger-menu' ).on( 'click', function() {
+    $('.hamburger-menu').on('click', function () {
         $(this).toggleClass('open');
         $('.site-navigation').toggleClass('show');
     });
@@ -29,7 +35,7 @@
     var current_slide = mySwiper.activeIndex;
     var countdown_date = $('.swiper-slide').eq(current_slide).data("date");
 
-    $('.countdown').countdown(countdown_date, function(event) {
+    $('.countdown').countdown(countdown_date, function (event) {
         $('.dday').html(event.strftime('%-D'));
         $('.dhour').html(event.strftime('%-H'));
         $('.dmin').html(event.strftime('%-M'));
@@ -42,7 +48,7 @@
         var current_slide = mySwiper.activeIndex;
         var countdown_date = $('.swiper-slide').eq(current_slide).data("date");
 
-        $('.countdown').countdown(countdown_date, function(event) {
+        $('.countdown').countdown(countdown_date, function (event) {
             $('.dday').html(event.strftime('%-D'));
             $('.dhour').html(event.strftime('%-H'));
             $('.dmin').html(event.strftime('%-M'));
@@ -77,8 +83,8 @@
     });
 
     // Load more events
-    var $container      = $('.events-list');
-    var $item           = $('.single-event');
+    var $container = $('.events-list');
+    var $item = $('.single-event');
 
     $item.slice(0, 6).addClass('visible');
 
@@ -95,16 +101,16 @@
     });
 
     // Buy Tickets Form
-    $(".increase-ticket").click(function() {
+    $(".increase-ticket").click(function () {
         var $n = $(this)
             .parent(".number-of-ticket")
             .parent(".flex")
             .parent(".ticket-row")
             .find(".ticket-count");
-        $n.val(Number($n.val())+1 );
+        $n.val(Number($n.val()) + 1);
     });
 
-    $(".decrease-ticket").click(function() {
+    $(".decrease-ticket").click(function () {
         var $n = $(this)
             .parent(".number-of-ticket")
             .parent(".flex")
@@ -112,20 +118,20 @@
             .find(".ticket-count");
         var amount = Number($n.val());
         if (amount > 0) {
-            $n.val(amount-1);
+            $n.val(amount - 1);
         }
     });
 
-    $(".clear-ticket-count").on( 'click', function() {
+    $(".clear-ticket-count").on('click', function () {
         var $count = $('.ticket-count');
         $count.val('1');
     });
 
     // Tabs
-    $(function() {
+    $(function () {
         $('.tab-content:first-child').show();
 
-        $('.tab-nav').bind('click', function(e) {
+        $('.tab-nav').bind('click', function (e) {
             $this = $(this);
             $tabs = $this.parent().parent().next();
             $target = $($this.data("target"));
@@ -146,7 +152,7 @@
         arrowDclass: 'arrow-d'
     });
 
-    $('.accordion-wrap .entry-title').on('click', function() {
+    $('.accordion-wrap .entry-title').on('click', function () {
         $('.accordion-wrap .entry-title').removeClass('active');
         $(this).addClass('active');
     });
@@ -159,7 +165,7 @@
         fill: {
             gradient: ["#581687", "#ab00ff"]
         }
-    }).on('circle-animation-progress', function(event, progress) {
+    }).on('circle-animation-progress', function (event, progress) {
         $(this).find('strong').html(Math.round(75 * progress) + '<i>%</i>');
     });
 
@@ -170,7 +176,7 @@
         fill: {
             gradient: ["#581687", "#ab00ff"]
         }
-    }).on('circle-animation-progress', function(event, progress) {
+    }).on('circle-animation-progress', function (event, progress) {
         $(this).find('strong').html(Math.round(83 * progress) + '<i>%</i>');
     });
 
@@ -181,7 +187,7 @@
         fill: {
             gradient: ["#581687", "#ab00ff"]
         }
-    }).on('circle-animation-progress', function(event, progress) {
+    }).on('circle-animation-progress', function (event, progress) {
         $(this).find('strong').html(Math.round(25 * progress) + '<i>%</i>');
     });
 
@@ -192,7 +198,7 @@
         fill: {
             gradient: ["#581687", "#ab00ff"]
         }
-    }).on('circle-animation-progress', function(event, progress) {
+    }).on('circle-animation-progress', function (event, progress) {
         $(this).find('strong').html(Math.round(82 * progress) + '<i>%</i>');
     });
 
@@ -207,13 +213,13 @@
         });
     });
 
-      $(".al").on('click',function(){
+    $(".al").on('click', function () {
         $('.site-navigation').toggleClass('show');
         $('.hamburger-menu').toggleClass('open');
     });
 
     // Back to Top
-    if ( $( '.back-to-top' ).length) {
+    if ($('.back-to-top').length) {
         var scrollTrigger = 500, // px
             backToTop = function () {
                 var scrollTop = $(window).scrollTop();
